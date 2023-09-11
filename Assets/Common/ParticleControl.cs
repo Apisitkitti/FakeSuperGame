@@ -25,7 +25,7 @@ public class ParticleControl : MonoBehaviour
     void ParticleAmount()
     {
         particleSystem.maxParticles = Mathf.RoundToInt(minParticleSlider.value);
-
+        
     }
 
     void SnowParticle()
@@ -37,5 +37,6 @@ public class ParticleControl : MonoBehaviour
     {
       RainSystem.maxParticles = Mathf.RoundToInt(RainParticleSlider.value);
     }
+    
 }
 }

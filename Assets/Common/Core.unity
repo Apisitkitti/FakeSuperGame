@@ -6779,6 +6779,8 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 6a945e61586fc4184857e39f8cdd7f70, type: 3}
   - id: jump
     clip: {fileID: 8300000, guid: f4f2dfcec5cb74fbd9118a4c4eee3ebc, type: 3}
+  - id: ThunderBolt
+    clip: {fileID: 8300000, guid: bc9260ce5893fb9438945b243df31301, type: 3}
 --- !u!4 &506294595
 Transform:
   m_ObjectHideFlags: 0
@@ -6935,8 +6937,6 @@ MonoBehaviour:
   WeatherUI: {fileID: 128325150}
   timeManager: 0
   weatherChoose: 0
-  starCount: 0
-  raisnnowCounting: 0
 --- !u!4 &560945707
 Transform:
   m_ObjectHideFlags: 0
@@ -6973,6 +6973,7 @@ MonoBehaviour:
   Star: {fileID: 1972508481}
   Snow: {fileID: 1413944479}
   Rain: {fileID: 18845906}
+  ThunderSound: {fileID: 878787087}
 --- !u!1 &572571054
 GameObject:
   m_ObjectHideFlags: 0

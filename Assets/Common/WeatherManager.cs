@@ -16,13 +16,6 @@ namespace SuperGame
         public int WeatherChoose => weatherChoose;
         [SerializeField] int weatherChoose;
 
-        public int StarCount => starCount;
-        [SerializeField] int starCount;
-
-        public int RainSnowCounting => raisnnowCounting;
-        [SerializeField] int  raisnnowCounting;
-
-
         protected override void InitAfterAwake()
         {
             WeatherUI.SetActive(true);
@@ -34,14 +27,6 @@ namespace SuperGame
         public void SelectWeather(int WeatherChoice)
         {
             weatherChoose = WeatherChoice;
-        }
-        public void SnowRainManager(int Count)
-        {
-            raisnnowCounting = Count;
-        }
-        public void StarManager(int StarChoice)
-        {
-            starCount = StarChoice;
         }
         public void SuccessFullButton()
         {

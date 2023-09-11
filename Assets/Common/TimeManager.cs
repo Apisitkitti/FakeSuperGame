@@ -12,6 +12,7 @@ namespace SuperGame
         [SerializeField] GameObject Star;
         [SerializeField] GameObject Snow;
         [SerializeField] GameObject Rain;
+        [SerializeField] AudioSource ThunderSound; 
         void Update()
         {
            TimeCheck();
@@ -46,11 +47,17 @@ namespace SuperGame
              if(WeatherManager.Instance.WeatherChoose == 2)
             {
                Rain.SetActive(true);
+               PlayThunderSound();
+               
             }
             if(WeatherManager.Instance.WeatherChoose == 3)
             {
                Snow.SetActive(true);
             }
+        }
+        void PlayThunderSound()
+        {
+            AudioManager.Instance.Play("ThunderBolt");
         }
     }
 }
