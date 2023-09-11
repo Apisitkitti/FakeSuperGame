@@ -10,9 +10,12 @@ namespace SuperGame
          
         [SerializeField] Light2D LightSource;
         [SerializeField] GameObject Star;
+        [SerializeField] GameObject Snow;
+        [SerializeField] GameObject Rain;
         void Update()
         {
            TimeCheck();
+           WeatherCheck();
         }
         
        void TimeCheck()
@@ -31,6 +34,22 @@ namespace SuperGame
             {
                 LightSource.color = new Color(0.2404522f,0.1950872f,0.3018868f,1f);
                 Star.SetActive(true);
+            }
+        }
+        void WeatherCheck()
+        {
+            if(WeatherManager.Instance.WeatherChoose == 1)
+            {
+               Snow.SetActive(false);
+               Rain.SetActive(false);
+            }
+             if(WeatherManager.Instance.WeatherChoose == 2)
+            {
+               Rain.SetActive(true);
+            }
+            if(WeatherManager.Instance.WeatherChoose == 3)
+            {
+               Snow.SetActive(true);
             }
         }
     }
