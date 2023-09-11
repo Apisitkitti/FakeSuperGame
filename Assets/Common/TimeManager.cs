@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using PhEngine.Core;
 using UnityEngine.Rendering.Universal;
+using UnityEngine.UI;
 namespace SuperGame
 {
     public class TimeManager : MonoBehaviour
@@ -13,12 +14,19 @@ namespace SuperGame
         [SerializeField] GameObject Snow;
         [SerializeField] GameObject Rain;
         [SerializeField] AudioSource ThunderSound; 
+        [SerializeField] Slider RainTimeAdjustment;
+        float thunderCountdown = 0;
+         void Start()
+        {
+            UpdateThunderCountdown();
+        }
         void Update()
         {
            TimeCheck();
            WeatherCheck();
+      
+
         }
-        
        void TimeCheck()
         {
              if(WeatherManager.Instance.TimeManager == 1)
@@ -37,28 +45,56 @@ namespace SuperGame
                 Star.SetActive(true);
             }
         }
-        void WeatherCheck()
+        
+             void WeatherCheck()
         {
-            if(WeatherManager.Instance.WeatherChoose == 1)
+            if (WeatherManager.Instance.WeatherChoose == 1)
             {
-               Snow.SetActive(false);
-               Rain.SetActive(false);
+                Snow.SetActive(false);
+                Rain.SetActive(false);
             }
-             if(WeatherManager.Instance.WeatherChoose == 2)
+            if (WeatherManager.Instance.WeatherChoose == 2)
             {
-               Rain.SetActive(true);
-               PlayThunderSound();
-               
+                Snow.SetActive(false);
+                Rain.SetActive(true);
+
+                // Decrease the thunder countdown over time
+                if (thunderCountdown > 0)
+                {
+                    thunderCountdown -= Time.deltaTime;
+                }
+                else
+                {
+                    // When the countdown reaches zero, play the thunder sound
+                    PlayThunderSound();
+
+                    // Update the countdown based on the slider value
+                    UpdateThunderCountdown();
+                }
             }
-            if(WeatherManager.Instance.WeatherChoose == 3)
+
+            if (WeatherManager.Instance.WeatherChoose == 3)
             {
-               Snow.SetActive(true);
+                Snow.SetActive(true);
+                Rain.SetActive(false);
             }
         }
+
         void PlayThunderSound()
         {
             AudioManager.Instance.Play("ThunderBolt");
         }
+
+        void UpdateThunderCountdown()
+        {
+            // Calculate the countdown based on the slider value
+            float sliderValue = RainTimeAdjustment.value;
+            
+            // Adjust the range and scaling factor as needed
+            // Here, I'm assuming a range of 1 to 10, but you can adjust this based on your requirements.
+            thunderCountdown = Mathf.Lerp(5f, 1f, sliderValue / RainTimeAdjustment.maxValue);
+        }
     }
-}
+  }
+
     

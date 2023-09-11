@@ -6974,6 +6974,7 @@ MonoBehaviour:
   Snow: {fileID: 1413944479}
   Rain: {fileID: 18845906}
   ThunderSound: {fileID: 878787087}
+  RainTimeAdjustment: {fileID: 1986527863}
 --- !u!1 &572571054
 GameObject:
   m_ObjectHideFlags: 0
@@ -9268,10 +9269,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 1873360371}
   m_HandleRect: {fileID: 887975691}
   m_Direction: 0
-  m_MinValue: 0
+  m_MinValue: 50
   m_MaxValue: 200
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 50
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -21371,10 +21372,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 382554047}
   m_HandleRect: {fileID: 474319458}
   m_Direction: 0
-  m_MinValue: 0
+  m_MinValue: 50
   m_MaxValue: 200
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 50
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
