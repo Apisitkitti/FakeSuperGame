@@ -8,10 +8,8 @@ namespace SuperGame
     {
         [SerializeField] GameObject WeatherUI;
     
-    
         public int TimeManager => timeManager;
         [SerializeField] int timeManager;
-
    
         public int WeatherChoose => weatherChoose;
         [SerializeField] int weatherChoose;
@@ -27,11 +25,6 @@ namespace SuperGame
         public void SelectWeather(int WeatherChoice)
         {
             weatherChoose = WeatherChoice;
-        }
-        public void SuccessFullButton()
-        {
-            WeatherUI.SetActive(false);
-            GameManager.Instance.StartLevel();
         }
 
     }

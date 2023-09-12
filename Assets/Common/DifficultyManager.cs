@@ -8,7 +8,7 @@ namespace SuperGame
         public int DifficultyLevel => difficultyLevel;
         [SerializeField] int difficultyLevel;
         [SerializeField] GameObject difficultyUI;
-        
+        [SerializeField] GameObject WeatherUI;
         protected override void InitAfterAwake()
         {
             difficultyUI.SetActive(true);
@@ -18,7 +18,9 @@ namespace SuperGame
         {
             difficultyLevel = value;
             difficultyUI.SetActive(false);
+            WeatherUI.SetActive(false);
             GameManager.Instance.StartLevel();
+
         }
     }
 }
